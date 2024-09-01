@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <style>
+        /* Apply the Poppins font to the heading */
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+ 
+        /*celebration animation */
+        .celebrate {
+            animation: celebration 0.5s ease-out forward; 
+        }
+        @keyframes celebration{
+            0% {transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.2); opacity: 0;}
+        }
+
+        /* Increase checkbox size */
+        input[type="checkbox"] {
+            width: 20px; 
+            height: 20px; 
+            transform: scale(1.5); 
+            accent-color: #218d1d; /* Tailwind purple-700 for better visibility */
+        }
+    </style>
+</head>
+<body class="bg-black text-purple-800 min-h-screen flex items-center justify-center p-4 text-center space-y-4 ">
+    
+    <div class="w-full max-w-md bg-purple-100 p-6 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold text-center mb-8 text-purple-800 font-poppins ">TO DO LIST</h1>
+
+        <div class="mb-7">
+            <h2 class="text-lg font-bold mb-2">Weekly tasks</h2>
+            <ul id="weekly-tasks" class="list-none space-y-3"></ul>
+            <input type="text" id="weekly-input" placeholder="Add a task" class="w-full p-3 rounded border">
+            <button onclick="addTask('monthly')" class="bg-purple-500 text-white w-full mt-2 p-3 rounded"> Add tasks </button>
+            
+        </div>
+
+
+        <div class="mb-4">
+            <h2  class="text-lg font-bold mb-2">Monthly tasks</h2>
+            <ul id="monthly-tasks" class="list-none space-y-3"></ul>
+            <input type="text" id="monthly-input" placeholder="Add a task" class="w-full p-3 rounded border">
+            <button onclick="addTask('weekly')" class="bg-purple-500 text-white w-full mt-2 p-3 rounded">Add tasks</button>
+            
+        </div>
+
+        <div class="mb-4">
+            <h2 class="text-lg font-bold mb-2">Yearly Goals</h2>
+            <ul id="yearly-goals" class="list-none space-y-3"></ul>
+            <input type="text" id="yearly-input" placeholder="Add a goal" class="w-full p-3 rounded border">
+            <button onlclick="addTask('monthly')" class="bg-purple-500 text-white w-full mt-2 p-3 rounded">Add a goal</button>
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+
+
+
+    
+</body>
+</html>
